@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <button class="Again">Again!</button>
+            <p>(Between 1 and 20)</p>
+        </div>
+        <h1>Guess my number!</h1>
+        <div class="number">?</div>
+    </header>
+    <main class="num">
+
+        <section class="left">
+            <input type="number" name="guess" class="guess" id="guess">
+            <button class="checkbtn" id="checkbtn">Check</button>
+        </section>
+        <section class="right">
+            <p class="message">Start Guessing...</p>
+            <p class="label-score">Score: <span id="score">20</span></p>
+            <p class="label-Highscore">HighScore: <span id="HighScore">0</span></p>
+        </section>
+    </main>
+
+</body>
+<script>
+    //to generate secure number:
+    let secretNumber = Math.trunc(Math.random() * 20 + 1);
+    let score = 20;
+    let HighScore = 0;
+
+    //logics:
+    document.getElementById("checkbtn").addEventListener('click', () => {
+        const guessedNo = Number(document.getElementById('guess').value);
+
+        if (!guessedNo) {
+            document.querySelector('.message').textContent = "No Number!";
+        } else if (guessedNo === secretNumber) {
+            document.querySelector('.message').textContent = "Correct Number!";
+            document.querySelector('.number').textContent = secretNumber;
+            document.querySelector('body').style.backgroundColor = "lightGreen";
+
+            if (score > HighScore) {
+                HighScore = score;
+                document.getElementById('HighScore').textContent = HighScore;
+            }
+        } else if (guessedNo > secretNumber) {
+            if (score > 1) {
+                document.querySelector('.message').textContent = "Too High!";
+                score = score - 1;
+                document.getElementById('score').textContent = score;
+            } else {
+                document.querySelector('.message').textContent = "You Lost the game!";
+                document.getElementById('score').textContent = 0;
+            }
+        } else if (guessedNo < secretNumber) {
+            if (score > 1) {
+                document.querySelector('.message').textContent = "Too Low!";
+                score = score - 1;
+                document.getElementById('score').textContent = score;
+            } else {
+                document.querySelector('.message').textContent = "You Lost the game!";
+                document.getElementById('score').textContent = 0;
+            }
+        }
+    })
+
+    document.querySelector('.Again').addEventListener('click', () => {
+    if (score > HighScore) {
+        HighScore = score;
+        document.getElementById('HighScore').textContent = HighScore;
+    }
+
+    score = 20;
+    secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+    document.querySelector('.message').textContent = 'Guess your number..!';
+    document.getElementById('score').textContent = score;
+
+    document.querySelector('.number').textContent = '?';
+    document.querySelector('body').style.backgroundColor = 'black';
+});
+
+
+
+
+</script>
+
+</html>

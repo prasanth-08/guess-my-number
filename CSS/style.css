@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    font-family: "press start 2p",sans-serif;
+
+}
+body{
+    background-color: black;
+    color: white;
+}
+/* loayout */
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header div .Again{
+    font-size: 40px;
+    margin: 10px;
+}
+header div p{
+    font-size: 30px;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+header{
+    border-bottom: 10px solid white;
+}
+.number{
+    font-size: 80px;
+    background-color: rgb(242, 157, 37);
+    width: 100px;
+    padding: 20px;
+    position: relative;
+    left: 40%;
+    top: 65px;
+    justify-content: center;
+}
+
+main{
+    margin-top: 150px;
+    display: flex;
+    justify-content:space-around;
+
+}
+.guess{
+    padding: 20px;
+    width: 150px;
+    font-size: 40px;
+    text-align: center;
+    border: 2px solid white;
+    display: block;
+
+}
+.checkbtn{
+    font-size: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.message{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.label-score{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.label-Highscore{
+    font-size: 30px;
+}
+
+/* Add this in your existing CSS file or in a <style> tag within the HTML file */
+
+/* Extra small devices (phones, 640px and down) */
+@media only screen and (max-width: 640px) {
+    /* Adjust styles for smaller screens here */
+    body {
+        font-size: 14px; /* For example, reduce the font size for better readability */
+    }
+    header div {
+        flex-direction: column; /* Align elements vertically for smaller screens */
+        text-align: center; /* Center-align text */
+    }
+    header div .Again {
+        font-size: 30px; /* Adjust button font size */
+        margin: 5px; /* Modify margin for better spacing */
+    }
+    header div p {
+        font-size: 15px; /* Adjust the paragraph font size */
+        text-align: center;
+    }
+    h1 {
+        font-size: 40px; /* Change heading font size */
+        text-align: center;
+    }
+    .number {
+        font-size: 60px; /* Adjust the number font size */
+        padding: 10px; /* Modify padding for better visibility */
+        left: 30%; /* Adjust the position of the number */
+        top: 45px;
+    
+    }
+    main {
+        margin-top: 100px; /* Reduce the margin-top */
+        flex-direction: column;
+        text-align: center  ;
+    
+    .guess {
+        width: 100px; /* Adjust input width */
+        font-size: 10px; /* Modify input font size */
+        /* padding-right: 100px; */
+        margin-left: 85px;
+    }
+    .checkbtn {
+        font-size: 20px; /* Adjust button font size */
+        padding: 8px; /* Modify button padding */
+        margin-top: 15px; /* Adjust margin */
+        margin-left: 10px;
+    }
+    .message,
+    .label-score,
+    .label-Highscore {
+        font-size: 20px; /* Adjust text font size */
+        margin-bottom: 30px; /* Modify margin for better spacing */
+        margin-top: 50px;
+       
+    }
+}
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* Media query for medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* Adjust styles for medium-sized devices here */
+    body {
+        /* Example styles for medium devices */
+        font-size: 16px;
+        /* Other styles for medium devices */
+    }
+    /* Additional styles specific to medium-sized devices */
+}
+
+}
+
+
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {}
+
+/* Extra large devices (large laptops and desktops, 1280px and up) */
+@media only screen and (min-width: 1280px) {}
+/* You can add more media queries for other device sizes if needed */
